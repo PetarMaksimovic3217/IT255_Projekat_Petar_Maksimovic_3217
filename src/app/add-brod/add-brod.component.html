@@ -1,0 +1,189 @@
+<div class="page_add_boat">
+  <div class="title">
+    <div class="container fluid_to_md text_center_xs">
+      <div class="row sat">
+      <div class="sac col-sm-7 col-sm-pull-5 col-md-8 col-md-pull-4">
+					<h1>My account</h1>
+				</div>
+      </div>
+  </div>
+
+</div>
+</div>
+  <div class="container fluid_to_md">
+    <ol class="breadcrumb">
+      <li><a href="" class="href">Rentaboat &nbsp; </a></li>
+      <li class="active">/ Add boat</li>
+    </ol>
+  </div>
+
+<div class="container fluid_to_md" style="width:650px;">
+       <h1 class="h1_big">Add Boat</h1>
+       <form [formGroup]="boatForm" >
+          <div class="alert alert-danger" style="display: none;"></div>
+     <div class="row">
+         <div class="col-md-3 field-label-responsive">
+             <label for="email">Category</label>
+         </div>
+         <div class="col-md-6">
+             <div class="form-group">
+                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                     <div class="input-group-addon" style="width: 2.6rem"></div>
+                     <select class="form-control" formControlName="kategorija" required>
+                      <option [value]="null">Please select</option>
+                      <option *ngFor="let kat of kategorija" [value]="kat.id">{{kat.naziv}}</option>
+                    </select>
+                 </div>
+             </div>
+         </div>
+
+     </div>
+     <div class="row">
+         <div class="col-md-3 field-label-responsive">
+             <label for="email">Model</label>
+         </div>
+         <div class="col-md-6">
+             <div class="form-group">
+                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                     <div class="input-group-addon" style="width: 2.6rem"></div>
+                     <select class="form-control" formControlName="model" required>
+                      <option [value]="null">Please select</option>
+                      <option *ngFor="let mod of model" [value]="mod.id">{{mod.naziv}}</option>
+                    </select>
+                 </div>
+             </div>
+         </div>
+
+     </div>
+     <div class="row">
+         <div class="col-md-3 field-label-responsive">
+             <label for="email">Mileage</label>
+         </div>
+         <div class="col-md-6">
+             <div class="form-group">
+                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                     <div class="input-group-addon" style="width: 2.6rem"></div>
+                     <input type="text"formControlName="predjeno_milja" class="form-control"
+                            placeholder="5000"  required minLength="1" >
+                 </div>
+             </div>
+         </div>
+
+
+     </div>
+
+       <div class="alert alert-danger" *ngIf="boatForm.controls['predjeno_milja'].touched && !boatForm.controls['predjeno_milja'].valid">  Mileage must be at least 1 characters long.</div>
+
+     <div class="row">
+         <div class="col-md-3 field-label-responsive">
+             <label for="email">Color</label>
+         </div>
+         <div class="col-md-6">
+             <div class="form-group">
+                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                     <div class="input-group-addon" style="width: 2.6rem"></div>
+                     <input type="text"formControlName="boja" class="form-control"
+                            placeholder="white with blue" required minlength="3">
+                 </div>
+             </div>
+         </div>
+
+     </div>
+      <div class="alert alert-danger" *ngIf="boatForm.controls['boja'].touched && !boatForm.controls['boja'].valid">  Color must be at least 3 characters long.</div>
+     <div class="row">
+         <div class="col-md-3 field-label-responsive">
+             <label for="email">Number of passengers</label>
+         </div>
+         <div class="col-md-6">
+             <div class="form-group">
+                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                     <div class="input-group-addon" style="width: 2.6rem"></div>
+                     <input type="text"formControlName="broj_putnika" class="form-control"
+                            placeholder="8" required minlength="1">
+                 </div>
+             </div>
+         </div>
+
+     </div>
+       <div class="alert alert-danger" *ngIf="boatForm.controls['broj_putnika'].touched && !boatForm.controls['broj_putnika'].valid">  Number of passengers must be at least 1 digit long.</div>
+     <div class="row">
+         <div class="col-md-3 field-label-responsive">
+             <label for="email">Registration</label>
+         </div>
+         <div class="col-md-6">
+             <div class="form-group">
+                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                     <div class="input-group-addon" style="width: 2.6rem"></div>
+                     <input type="text"formControlName="registracija" class="form-control"
+                            placeholder="CN115-86" required minlength="8">
+                 </div>
+             </div>
+         </div>
+
+     </div>
+
+       <div class="alert alert-danger" *ngIf="boatForm.controls['registracija'].touched && !boatForm.controls['registracija'].valid">  Registration must be at least 8 characters long.</div>
+
+     <div class="row">
+         <div class="col-md-3 field-label-responsive">
+             <label for="email">Destination</label>
+         </div>
+         <div class="col-md-6">
+             <div class="form-group">
+                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                     <div class="input-group-addon" style="width: 2.6rem"></div>
+                     <select class="form-control" formControlName="destinacija" required>
+                      <option [value]="null">Please select</option>
+                      <option *ngFor="let dest of destinacija" [value]="dest.id">{{dest.ime}}</option>
+                    </select>
+                 </div>
+             </div>
+         </div>
+
+     </div>
+     <div class="row">
+         <div class="col-md-3 field-label-responsive">
+             <label for="email">Picture</label>
+         </div>
+         <div class="col-md-6">
+             <div class="form-group">
+                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                     <div class="input-group-addon" style="width: 2.6rem"></div>
+                     <select class="form-control" formControlName="slika_id" required>
+                      <option [value]="null">Please select</option>
+                      <option *ngFor="let slik of slika" [value]="slik.id">{{slik.link}}</option>
+                    </select>
+                 </div>
+             </div>
+         </div>
+
+     </div>
+     <div class="row">
+         <div class="col-md-3 field-label-responsive">
+             <label for="email">Price</label>
+         </div>
+         <div class="col-md-6">
+             <div class="form-group">
+                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                     <div class="input-group-addon" style="width: 2.6rem"></div>
+                     <input type="text" formControlName="cena" class="form-control"
+                            placeholder="3000" required minlength="3">
+                 </div>
+             </div>
+         </div>
+
+     </div>
+       <div class="alert alert-danger" *ngIf="boatForm.controls['cena'].touched && !boatForm.controls['cena'].valid">  Price must be at least 3 digit long.</div>
+
+     <div class="row">
+         <div class="col-md-3"></div>
+         <div class="col-md-6 login">
+             <button type="submit" class="btn btn-success" (click)="addBrod(boatForm.value)" [disabled]="!boatForm.valid"><i class="fas fa-plus"></i> Add</button>
+         </div>
+     </div>
+
+
+
+            </form>
+
+</div>

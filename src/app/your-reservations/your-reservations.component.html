@@ -1,0 +1,67 @@
+<div class="page_title">
+  <div class="title">
+    <div class="container fluid_to_md text_center_xs">
+      <div class="row sat">
+      <div class="sac col-sm-7 col-sm-pull-5 col-md-8 col-md-pull-4">
+					<h1>Your reservations</h1>
+				</div>
+      </div>
+  </div>
+
+</div>
+</div>
+  <div class="container fluid_to_md">
+    <ol class="breadcrumb">
+      <li><a href="" class="href">Rentaboat &nbsp; </a></li>
+      <li class="active">/ Reservations</li>
+    </ol>
+  </div>
+<section>
+    <ng-container *ngIf="!isDone">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1" >
+
+                <table class="table table-hover" style="width:1150px;">
+                    <thead>
+<!--NASLOV TABELE-->
+                    <tr>
+                        <th class="text-center ">ID of order</th>
+                        <th class="text-center">Boat ID</th>
+                        <th class="text-center">Boat model</th>
+                        <th class="text-center">Category</th>
+                        <th class="text-center" >Number of passengers</th>
+                        <th class="text-center">City</th>
+                        <th class="text-center">State</th>
+                        <th class="text-center">Period</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let boat of prRezervacije" >
+<!--PODACI U TABELI-->
+                     <ng-container *ngIf="!boat.isAdded"  >
+                        <td class="col-sm-1 col-md-1 text-center"><strong >{{boat.id_narudzbine}}</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong >{{boat.id}}</strong></td>
+                          <td class="col-sm-1 col-md-1 text-center"><strong >{{boat.model}}</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong >{{boat.kategorija}}</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong >{{boat.broj_putnika}}</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>{{boat.destinacija}}</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>{{boat.destinacija_drzava}}</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>{{boat.period}}</strong></td>
+
+                    </ng-container>
+                    </tr>
+                  <div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                  </div>

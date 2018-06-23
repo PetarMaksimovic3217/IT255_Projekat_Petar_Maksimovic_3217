@@ -1,0 +1,176 @@
+
+<div class="page_title">
+  <div class="title">
+    <div class="container fluid_to_md text_center_xs">
+      <div class="row sat">
+      <div class="sac col-sm-7 col-sm-pull-5 col-md-8 col-md-pull-4">
+					<h1>My account</h1>
+				</div>
+      </div>
+  </div>
+
+</div>
+</div>
+  <div class="container fluid_to_md">
+    <ol class="breadcrumb">
+      <li><a href="" class="href">Rentaboat &nbsp; </a></li>
+      <li class="active" *ngIf="destinacija">/ Destination / {{destinacija.ime}}</li>
+    </ol>
+  </div>
+<section>
+    <ng-container *ngIf="!isDone">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1" >
+                <form [formGroup]="periodForm">
+                <table class="table table-hover">
+                    <thead>
+<!--NASLOV TABELE-->
+                    <tr>
+                        <th class="text-center">Boat</th>
+                        <th class="text-center">Dates</th>
+                        <th class="text-center">Skiper</th>
+
+                        <th class="text-center">Price</th>
+                        <th class="text-center objasnjenje" >Skiper price</th>
+                        <th class="text-center">Total</th>
+                        <th class="text-center">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let boat of prKorpa" >
+<!--PODACI U TABELI-->
+                        <ng-container *ngIf="!boat.isAdded"  >
+                        <td class="col-sm-8 col-md-6" >
+                            <div class="media" >
+                                <div class="media-body" style="width: 240px;">
+                                    <h4 class="media-heading"><a href="#">{{boat.model}}</a></h4>
+                                </div>
+                            </div></td>
+
+                            <td class="col-sm-8 col-md-6">
+
+                               <select   class="form-control datum" formControlName="period_id" required >
+                                <option [value]="null">Please select</option>
+                               <option *ngFor="let per of period" [value]="per.id">{{per.naziv}}</option>
+                             </select><br>
+                             <button type="button" class="btn btn-success" (click)="update(boat.id,periodForm.value)">
+                                 <span class="glyphicon glyphicon-remove" > Update Date</span>
+                             </button>
+
+
+                          </td>
+                          <td>
+                            <div class=text-center>
+                        <input type="checkbox"  formControlName="skiper" [(ngModel)]="checkbox" (change)="updateValue()">
+                      </div>
+                        <p class="objasnjenje">If selected skiper price is calculated 100 euros per day which is in total 700 eur for 7 days</p>
+
+                          </td>
+
+
+
+
+                        <td class="col-sm-1 col-md-1 text-center"><strong >{{boat.cena}}</strong></td>
+                          <td class="col-sm-1 col-md-1 text-center"*ngIf="this.skiper==0"><strong></strong></td>
+                          <td class="col-sm-1 col-md-1 text-center"*ngIf="this.skiper==1"><strong>700</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center" *ngIf="this.skiper==0"><strong>{{boat.cena}}</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"*ngIf="this.skiper==1"><strong>{{boat.cena+700}}</strong></td>
+                        <td class="col-sm-1 col-md-1">
+
+
+
+                            <button type="button" class="btn btn-danger" (click)="remove(boat.id)">
+                                <span class="glyphicon glyphicon-remove" > Delete</span>
+                            </button></td>
+                    </ng-container>
+                    </tr>
+
+
+<!--OVDE STOJI UKUPNO-->
+                    <tr *ngIf="prKorpa">
+                         <td>   </td>
+                         <td>   </td>
+                         <td>   </td>
+                         <td>   </td>
+                         <td>   </td>
+                         <td><h5>Total</h5></td>
+
+                          <td class="text-right" *ngIf="this.skiper==0" ><h5><strong  > {{this.getTotal()}}</strong></h5></td>
+                          <td class="text-right" *ngIf="this.skiper==1" ><h5><strong  > {{this.getTotalWithSkiper()}}</strong></h5></td>
+                     </tr>
+
+<!--NARUCIVANJE I POVRATAK NAZAD NA PROIZVODE-->
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>
+                            <button type="button" class="btn btn-success" (click)="isDone=true">
+                                Order <span class="glyphicon glyphicon-play"></span>
+                            </button></td>
+                    </tr>
+                    </tbody>
+                </table>
+                  </form>
+            </div>
+        </div>
+    </div>
+    </ng-container>
+    <!--PRIKAZ DELA ZA NARUCIVANJE-->
+    <ng-container *ngIf="isDone" >
+        <div class="container" >
+            <div class="row">
+                <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+                    <div class="row" *ngIf="user">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <address>
+                                <strong>{{user.ime}} {{user.prezime}}</strong>
+                                <br>
+                                {{user.adresa}}
+                            </address>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                            <p id="date"></p>
+                            <p *ngFor="let boat of prKorpa">
+                              Number of reservation: {{boat.idKorpe}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="text-center">
+                            <h1>Reservation</h1>
+                        </div>
+                        <table class="table table-hover">
+                            <tbody>
+                            <tr *ngIf="prKorpa">
+                                <td>   </td>
+                                <td>   </td>
+                                <td class="text-right"><h4><strong>For payment: </strong></h4></td>
+                                <td class="text-center text-danger"><h4><strong>{{getUkupno()}}</strong></h4></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <button type="button" class="btn btn-success btn-lg btn-block" (click)="checkout()">
+                            Finish order   <span class="glyphicon glyphicon-chevron-right"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </ng-container>
+    <div>
+    <br>
+    </div>
+
+
+
+
+
+
+</section>

@@ -1,0 +1,148 @@
+<div class="page_title">
+  <div class="title">
+    <div class="container fluid_to_md text_center_xs">
+      <div class="row sat">
+      <div class="sac col-sm-7 col-sm-pull-5 col-md-8 col-md-pull-4">
+					<h1>My account</h1>
+				</div>
+      </div>
+  </div>
+</div>
+</div>
+  <div class="container fluid_to_md">
+    <ol class="breadcrumb">
+      <li><a href="" class="href">Rentaboat &nbsp; </a></li>
+      <li class="active">/ My account</li>
+    </ol>
+  </div>
+  <div class="container fluid_to_md">
+    <div class="row">
+      <div class="col-md-5 col-md-push-7">
+
+        <div class="zaRegistraciju">
+          <form class="form-horizontal" role="form" [formGroup]="registracijaForm">
+             <div class="alert alert-danger" style="display: none;"></div>
+          <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+                  <h2>Register New User</h2>
+                  <hr>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-3 field-label-responsive">
+                  <label for="name">Name</label>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                          <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                          <input type="text" formControlName="ime" class="form-control"
+                                 placeholder="John" required minLength="3">
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+             <div class="alert alert-danger" *ngIf="registracijaForm.controls['ime'].touched && !registracijaForm.controls['ime'].valid">  Name  must be at least 3 characters long.</div>
+          <div class="row">
+              <div class="col-md-3 field-label-responsive">
+                  <label for="name">Surname</label>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                          <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                          <input type="text" formControlName="prezime" class="form-control"
+                                 placeholder="Doe" required minLength="4">
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+          <div class="alert alert-danger" *ngIf="registracijaForm.controls['prezime'].touched && !registracijaForm.controls['prezime'].valid">  Surname  must be at least 4 characters long.</div>
+
+          <div class="row">
+              <div class="col-md-3 field-label-responsive">
+                  <label for="email">Address</label>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                          <div class="input-group-addon" style="width: 2.6rem"><i class="fas fa-location-arrow"></i></div>
+                          <input type="text" formControlName="adresa" class="form-control"
+                                 placeholder="Carnegie street, 17" required minLength="5">
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+          <div class="alert alert-danger" *ngIf="registracijaForm.controls['adresa'].touched && !registracijaForm.controls['adresa'].valid">  Adress  must be at least 5 characters long.</div>
+
+          <div class="row">
+              <div class="col-md-3 field-label-responsive">
+                  <label for="email">E-Mail Address</label>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                          <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                          <input type="text" formControlName="email" class="form-control"
+                                 placeholder="you@example.com" required minLength="8" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+          <div class="alert alert-danger" *ngIf="registracijaForm.controls['email'].touched && !registracijaForm.controls['email'].valid">  Email  must be at least 8 characters long and to have form of an email.</div>
+
+          <div class="row">
+              <div class="col-md-3 field-label-responsive">
+                  <label for="password">Password</label>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group has-danger">
+                      <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                          <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                          <input type="password" formControlName="lozinka" class="form-control"
+                                 placeholder="Password" required minLength="4"  >
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+          <div class="alert alert-danger" *ngIf="registracijaForm.controls['lozinka'].touched && !registracijaForm.controls['lozinka'].valid">  Password must be at least 4 characters long.</div>
+
+          <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6 sredina">
+                  <button type="submit" class="btn btn-success" (click)="onRegistracija(registracijaForm.value)" [disabled]="!registracijaForm.valid"><i class="fa fa-user-plus"></i> Register</button>
+              </div>
+          </div>
+      </form>
+        </div>
+      </div>
+      <div class="col-md-7 col-md-pull-5">
+        <h2 class="h2h2_big_first">
+          How does it work?
+        </h2>
+        <p>"Your Rentaboat account is a free and easy way to receive all your charter quotations directly from the charter operators.
+           Compare each offer, boats and prices, discuss with the renters, check the reviews of the previous clients, share your quotations with your crew and book securely online.
+            Thanks to Rentaboat and our excellent customer service, you will enjoy unique sailing experiences."</p>
+            <ul class="lista">
+            <li>
+              <i class="far fa-check-square"></i>
+              "Receive personalized quotes"
+            </li>
+            <li>
+              <i class="far fa-check-square"></i>
+              "Compare yach charter prices and equipment"
+            </li>
+            <li>
+              <i class="far fa-check-square"></i>
+              "Save your money! Best price guaranteed."
+            </li>
+            </ul>
+      </div>
+    </div>
+  </div>

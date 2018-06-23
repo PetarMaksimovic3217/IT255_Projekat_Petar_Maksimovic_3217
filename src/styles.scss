@@ -1,1 +1,339 @@
-/* You can add global styles to this file, and also import other style files */
+.page_title {
+    width: 100%;
+    background-color: #eee;
+    background-image: url("./assets/slike/register-slika.jpg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .title {
+   background: rgba(0,0,0,.4);
+   color: #fff;
+   text-align: left;
+   padding-top: 30px;
+   padding-bottom: 30px;
+   a,  li, li.active {
+   color: #fff;
+}
+}
+}
+.page_add_boat {
+    width: 100%;
+    background-color: #eee;
+    background-image: url("./assets/slike/addboat.jpg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .title {
+   background: rgba(0,0,0,.4);
+   color: #fff;
+   text-align: left;
+   padding-top: 30px;
+   padding-bottom: 30px;
+   a,  li, li.active {
+   color: #fff;
+}
+}
+}
+
+.page_add_category {
+    width: 100%;
+    background-color: #eee;
+    background-image: url("./assets/slike/addcategory.jpg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .title {
+   background: rgba(0,0,0,.4);
+   color: #fff;
+   text-align: left;
+   padding-top: 30px;
+   padding-bottom: 30px;
+   a,  li, li.active {
+   color: #fff;
+}
+}
+}
+
+.breadcrumb {
+    background: none;
+    padding: 0;
+    margin: 10px 0;
+    font-size: 12px;
+}
+.zaRegistraciju{
+  background: #EAEAEA;
+  margin-bottom: 40px;
+}
+.sredina{
+  text-align: center;
+  padding-bottom: 30px;
+}
+.login{
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.lista{
+  list-style:none;
+  margin-bottom: 60px;
+}
+wrapper{
+   margin-bottom: 70px;
+}
+.btn-space {
+    margin-right: 15px;
+}
+
+.desno{
+  position:absolute;
+     top: 5%;
+     left:25%;
+     width: 100%;
+     text-align: center;
+     color: white;
+     font-size: 27px;
+     letter-spacing: 8px;
+     text-transform: uppercase;
+     font-family: 'Dancing Script', cursive;
+}
+.levo{
+  position:absolute;
+     top: 10%;
+     left:-10%;
+     width: 100%;
+     text-align: center;
+     color: white;
+     font-size: 27px;
+     letter-spacing: 8px;
+     text-transform: uppercase;
+     font-family: 'Dancing Script', cursive;
+}
+.top_dest {
+    padding-top: 0px;
+    padding-bottom: 40px;
+    .dest {
+        list-style: none;
+        padding: 0 0 10px 0;
+        margin: 0 0 30px 0;
+        font-size: 22px;
+        clear: both;
+        border-bottom: 1px solid #C5C5C5;
+        .title {
+            float: none;
+            font-weight: bold;
+            font-size: 22px;
+            color: #000;
+            text-transform: uppercase;
+            padding-bottom: 5px;
+            letter-spacing: 1.5px;
+        }
+       li {
+            clear: both;
+        }
+        .base {
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            span {
+                color: #fc3755;
+                float: right;
+                font-weight: bold;
+                padding-bottom: 5px;
+                letter-spacing: normal;
+            }
+
+        }
+    }
+    .note {
+        font-size: 12px;
+        color: #808080;
+        padding-top: 10px;
+        margin-top: -30px;
+    }
+}
+
+
+
+
+.h1_big, .h2_big {
+    color: #1950a0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    padding: 0 0 32px 0;
+    margin: 0 0 30px 0;
+    position: relative;
+}
+row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.rentaboat{
+      color: #fff;
+      background-size: cover;
+      margin-bottom: 70px;
+
+     .filter {
+         background: rgba(0,0,0,.2);
+         padding-top: 180px;
+         padding-bottom: 180px;
+     }
+     .container {
+         text-align: center;
+     }
+     .title {
+         line-height: 1.1;
+     }
+     p {
+        font-size: 16px;
+         font-weight: 500;
+         padding-bottom: 20px;
+     }
+     .btn {
+         padding: 15px 80px;
+     }
+}
+
+.mapa {
+    background-image: url("./assets/slike/mapa.jpg");
+    background-position: 50% 50%;
+}
+
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+
+.btn.big {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 15px 40px;
+}
+.btn {
+    white-space: normal;
+}
+.btn_white {
+    color: #fff;
+    background: none;
+    border-color: #fff;
+}
+
+.boat_types {
+    margin-bottom: 70px;
+    .type {
+        margin-bottom: 15px;
+        margin-top: 15px;
+        a {
+           display: block;
+           color: #fff;
+           font-weight: 500;
+           font-size: 16px;
+           text-transform: uppercase;
+           text-align: center;
+           padding: 330px 35px 35px 35px;
+           overflow: hidden;
+       }
+    }
+
+    .sail {
+        background: url(".//assets/slike/jedrilica.jpg")no-repeat;
+        background-size: cover;
+    }
+    .cata {
+        background: url(".//assets/slike/cata.jpg") no-repeat;
+        background-size: cover;
+    }
+    .motor {
+        background: url(".//assets/slike/motor.jpg")  no-repeat;
+        background-size: cover;
+    }
+}
+.quote_end {
+    width: 100%;
+    height: 480px;
+    background: url(".//assets/slike/family.jpg")  no-repeat #fff;
+    background-size: cover;
+}
+.quote_end_bg {
+    margin-top: -120px;
+    .bg {
+        background: #fff;
+        padding: 40px 50px 50px 50px;
+         p {
+            padding-bottom: 20px;
+        }
+    }
+
+}
+
+.footer{
+  background: #1950a0;
+min-height: 200px;
+clear: both;
+padding-bottom: 30px;
+padding-top: 40px;
+color: #fff;
+font-size: 14px;
+        .menus {
+        padding: 10px 0;
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .links{
+          margin-bottom: 30px;
+        }
+        .links a {
+        }
+
+            color: #80A5D9;
+        }
+        .links ul li {
+            color: #80A5D9;
+            padding-bottom: 4px;
+             a {
+                font-size: 12px;
+            }
+            b {
+                font-size: 14px;
+                color: #fff;
+                text-transform: uppercase;
+            }
+        }
+
+        .social,.extra {
+            margin-top: 25px;
+            b {
+         color: #fff;
+         font-size: 14px;
+         text-transform: uppercase;
+     }
+        }
+        .copy {
+      text-align: center;
+      border-top: 1px solid #537db9;
+      margin: 0 0 20px 0;
+      padding-top: 20px;
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 12px;
+  }
+
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}

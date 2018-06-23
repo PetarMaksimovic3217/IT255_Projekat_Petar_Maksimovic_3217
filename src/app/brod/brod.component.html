@@ -1,0 +1,59 @@
+<div class="page_title">
+  <div class="title">
+    <div class="container fluid_to_md text_center_xs">
+      <div class="row sat">
+      <div class="sac col-sm-7 col-sm-pull-5 col-md-8 col-md-pull-4">
+					<h1>Boats</h1>
+				</div>
+      </div>
+  </div>
+
+</div>
+</div>
+  <div class="container fluid_to_md">
+    <ol class="breadcrumb">
+      <li><a href="" class="href">Rentaboat &nbsp; </a></li>
+      <li class="active">/ Boats</li>
+    </ol>
+  </div>
+  <div class="container">
+
+  				<div class="container">
+  					<h2>Our boats</h2>
+  					<hr>
+  						<div>
+  							<div *ngFor=" let item of data" class="column">
+  							<br>
+  								<img src="{{item.slika}}" class="img-responsive" alt="">
+  						<div class="text-bg col-lg-12 col-xs-12">
+  						<h2>	<span class="col-lg-6 text-center">{{item.proizvodjac_naziv}} {{item.model_naziv}}</span></h2>
+
+  						</div>
+
+
+
+
+                      <div class="text col-lg-6 col-xs-12">
+                            <p>Boat id: {{item.brod_id}}</p>
+                            <p>Registration:   {{item.brod_registracija}}</p>
+                            <p>Number of passengers:  {{item.brod_broj_putnika}}</p>
+                          <p>Base: {{item.baza}} </p>
+              <hr>
+              <h4>Additional informations: </h4>
+                          <p>Number of nautical milles: {{item.brod_predjeno_milja}}milles</p>
+                          <p>Manufacturer: {{item.proizvodjac_naziv}} </p>
+              <p>Model name: {{item.model_naziv}} </p>
+              <hr>
+                      </div>
+
+
+
+
+
+
+  							</div>
+
+  						</div>
+  				</div>
+
+  		</div>

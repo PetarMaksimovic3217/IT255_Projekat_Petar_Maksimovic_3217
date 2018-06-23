@@ -1,0 +1,80 @@
+<div class="page_add_category">
+  <div class="title">
+    <div class="container fluid_to_md text_center_xs">
+      <div class="row sat">
+      <div class="sac col-sm-7 col-sm-pull-5 col-md-8 col-md-pull-4">
+					<h1>My account</h1>
+				</div>
+      </div>
+  </div>
+
+</div>
+</div>
+  <div class="container fluid_to_md">
+    <ol class="breadcrumb">
+      <li><a href="" class="href">Rentaboat &nbsp; </a></li>
+      <li class="active">/ Add category</li>
+    </ol>
+  </div>
+  <div class="container fluid_to_md" style="width:650px;">
+         <h1 class="h1_big">Add category</h1>
+      <form [formGroup]="categoryForm" >
+         <div class="alert alert-danger" style="display: none;"></div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <label for="email">Category</label>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"></div>
+                    <input type="text"formControlName="naziv" class="form-control"
+                           placeholder="sail boat" required autofocus>
+                </div>
+            </div>
+        </div>
+
+    </div>
+     <div class="alert alert-danger" *ngIf="categoryForm.controls['naziv'].touched && !categoryForm.controls['naziv'].valid">  Name  must be at least 4 characters long.</div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 login">
+            <button type="submit" class="btn btn-success" (click)="addCategory(categoryForm.value)" [disabled]="!categoryForm.valid"><i class="fas fa-plus"></i> Add</button>
+        </div>
+    </div>
+
+
+
+           </form>
+
+   <div class="container fluid_to_md" >
+ <div class="col-lg-12" style="width:950px; position:relative;padding-bottom: 40px;">
+        <table   cellspacing="10" >
+            <thead>
+            <tr>
+
+                <th>ID: </th>
+                <th>Name: </th>
+                <th>Delete: </th>
+
+
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr *ngFor="let data of kategorija">
+                <td >{{data.id}}</td>
+                <td >{{data.naziv}}</td>
+
+                <td><button type="button" class="btn btn-danger" (click)="remove(data.id)">
+                    <span class="glyphicon glyphicon-remove" > Delete</span>
+                    </button></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+
+</div>

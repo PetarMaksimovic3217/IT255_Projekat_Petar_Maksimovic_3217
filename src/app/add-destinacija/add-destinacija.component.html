@@ -1,0 +1,116 @@
+<div class="page_title">
+  <div class="title">
+    <div class="container fluid_to_md text_center_xs">
+      <div class="row sat">
+      <div class="sac col-sm-7 col-sm-pull-5 col-md-8 col-md-pull-4">
+					<h1>My account</h1>
+				</div>
+      </div>
+  </div>
+
+</div>
+</div>
+  <div class="container fluid_to_md">
+    <ol class="breadcrumb">
+      <li><a href="" class="href">Rentaboat &nbsp; </a></li>
+      <li class="active">/ Add destination</li>
+    </ol>
+  </div>
+  <div class="container fluid_to_md" style="width:650px;">
+         <h1 class="h1_big">Add destination</h1>
+      <form [formGroup]="destinationForm" >
+         <div class="alert alert-danger" style="display: none;"></div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <label for="email">Name</label>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"></div>
+                    <input type="text" formControlName="ime" class="form-control"
+                           placeholder="Lefkada" required minLength="3">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+       <div class="alert alert-danger" *ngIf="destinationForm.controls['ime'].touched && !destinationForm.controls['ime'].valid">  Name  must be at least 3 characters long.</div>
+
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <label for="email">State</label>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"></div>
+                    <input type="text"formControlName="drzava" class="form-control"
+                           placeholder="Greece" required minLength="4">
+                </div>
+            </div>
+        </div>
+
+    </div>
+     <div class="alert alert-danger" *ngIf="destinationForm.controls['drzava'].touched && !destinationForm.controls['drzava'].valid">  State must be at least 4 characters long.</div>
+    <div class="row">
+      <div class="col-md-3 field-label-responsive">
+          <label for="email">Picture</label>
+      </div>
+      <div class="col-md-6">
+          <div class="form-group">
+              <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                  <div class="input-group-addon" style="width: 2.6rem"></div>
+                  <input type="text" formControlName="link" class="form-control" placeholder="link" required minLength="8" autofocus>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="alert alert-danger" *ngIf="destinationForm.controls['link'].touched && !destinationForm.controls['link'].valid"> Url  must be at least 8 characters long  .</div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 login">
+            <button type="submit" class="btn btn-success" (click)="addDestinacija(destinationForm.value)" [disabled]="!destinationForm.valid"><i class="fas fa-plus"></i> Add</button>
+        </div>
+    </div>
+
+
+
+           </form>
+
+   <div class="container fluid_to_md" >
+ <div class="col-lg-12" style="width:950px; position:relative;padding-bottom: 40px;">
+        <table   cellspacing="10" >
+            <thead>
+            <tr>
+
+                <th>ID: </th>
+                <th>Name: </th>
+                <th>State: </th>
+                <th>Picture: </th>
+                <th>Delete: </th>
+
+
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr *ngFor="let data of destinacija">
+                <td >{{data.id}}</td>
+                <td >{{data.ime}}</td>
+                <td >{{data.drzava}}</td>
+                <td >{{data.slika}}</td>
+
+                <td><button type="button" class="btn btn-danger" (click)="removeDestinacija(data.id)">
+                    <span class="glyphicon glyphicon-remove" > Delete</span>
+                    </button></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+
+</div>

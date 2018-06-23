@@ -1,0 +1,49 @@
+<div class="page_title">
+  <div class="title">
+    <div class="container fluid_to_md text_center_xs">
+      <div class="row sat">
+      <div class="sac col-sm-7 col-sm-pull-5 col-md-8 col-md-pull-4">
+					<h1>Destinations</h1>
+				</div>
+      </div>
+  </div>
+
+</div>
+</div>
+  <div class="container fluid_to_md">
+    <ol class="breadcrumb">
+      <li><a href="" class="href">Rentaboat &nbsp; </a></li>
+      <li class="active">/ Destinations</li>
+    </ol>
+  </div>
+  <div class="container">
+
+  				<div class="container">
+  					<h2>Our Destinations</h2>
+  					<hr>
+            <div class="form-group"  style="width:75%;padding-top: 20px; padding-left: 20;">
+            <input type="text" class="form-control"  placeholder="name of the place" [(ngModel)]="ime" ng-minlength="1">
+            </div>
+  						<div>
+
+  							<div *ngFor=" let item of destinacija | searchDestination:ime" class="column">
+  							<br>
+  								<img src="{{item.slika}}" class="img-responsive" alt="" style="height:400px; width:800px;">
+  						<div class="text-bg col-lg-12 col-xs-12">
+  							<h2><span class="col-lg-6 text-center">{{item.ime}} {{item.drzava}}</span></h2>
+
+  						</div>
+
+
+  							<button class="btn btn-dark col-lg-9 col-xs-9" style="height:80px; font-size:35px;" (click)="viewItem(item.id)"><span>Look to reserve!</span></button>
+
+  							</div>
+
+  						</div>
+  				</div>
+
+  		</div>
+<div>
+  <br>
+  <br>
+</div>

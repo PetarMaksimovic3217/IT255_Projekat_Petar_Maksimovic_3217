@@ -1,0 +1,71 @@
+<div class="page_title">
+  <div class="title">
+    <div class="container fluid_to_md text_center_xs">
+      <div class="row sat">
+      <div class="sac col-sm-7 col-sm-pull-5 col-md-8 col-md-pull-4">
+					<h1>My account</h1>
+				</div>
+      </div>
+  </div>
+
+</div>
+</div>
+  <div class="container fluid_to_md">
+    <ol class="breadcrumb">
+      <li><a href="" class="href">Rentaboat &nbsp; </a></li>
+      <li class="active">/ My account</li>
+    </ol>
+  </div>
+  <div class="container fluid_to_md" style="width:650px;">
+         <h1 class="h1_big">Login</h1>
+      <form [formGroup]="loginForm" >
+         <div class="alert alert-danger" style="display: none;"></div>
+    <div class="row">
+        <div class="col-md-3 field-label-responsive">
+            <label for="email">E-Mail Address</label>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                    <input type="text"formControlName="email" class="form-control"
+                           placeholder="you@example.com" required minLength="8" autofocus>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="alert alert-danger" *ngIf="loginForm.controls['email'].touched && !loginForm.controls['email'].valid">  Email must be at least 8 characters long and to have form of an email.</div>
+
+    <div class="row" >
+        <div class="col-md-3 field-label-responsive">
+            <label for="password">Password</label>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group has-danger">
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                    <input type="password" formControlName="lozinka" class="form-control"
+                           placeholder="Password" required minLength="4"  >
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="alert alert-danger" *ngIf="loginForm.controls['lozinka'].touched && !loginForm.controls['lozinka'].valid">  Password must be at least 4 characters long.</div>
+
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 login">
+            <button type="submit" class="btn btn-success" (click)="login(loginForm.value)" [disabled]="!loginForm.valid"><i class="fa fa-user-plus"></i> Login</button>
+        </div>
+    </div>
+
+
+
+           </form>
+   <div style="padding:70px;">
+   </div>
+
+
+</div>

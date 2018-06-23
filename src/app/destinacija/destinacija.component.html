@@ -1,0 +1,70 @@
+<div class="page_title">
+  <div class="title">
+    <div class="container fluid_to_md text_center_xs">
+      <div class="row sat">
+      <div class="sac col-sm-7 col-sm-pull-5 col-md-8 col-md-pull-4">
+					<h1>My account</h1>
+				</div>
+      </div>
+  </div>
+
+</div>
+</div>
+  <div class="container fluid_to_md">
+    <ol class="breadcrumb">
+      <li><a href="" class="href">Rentaboat &nbsp; </a></li>
+      <li class="active" *ngIf="destinacija">/ Destination / {{destinacija.ime}}</li>
+    </ol>
+  </div>
+  <div class="container"  *ngIf="destinacija">
+
+          <div class="container">
+            <h2>{{destinacija.ime}}</h2>
+            <hr>
+              <div>
+                <div class="column">
+                <br>
+                  <img src="{{destinacija.slika}}" class="img-responsive" alt="">
+              <div class="text-bg col-lg-12 col-xs-12">
+                <h2><span class="col-lg-6 text-center">{{destinacija.ime}} {{destinacija.drzava}}</span></h2>
+
+              </div>
+                <p>Enjoy in the sunny {{destinacija.ime}} where you will find best beaches and restaurants in {{destinacija.drzava}}</p>
+
+
+                </div>
+
+              </div>
+          </div>
+
+      </div>
+<div>
+  <br>
+  <br>
+</div>
+
+<div class="container"*ngIf="destinacija">
+
+        <div class="container">
+          <h2>Our boats based in {{destinacija.ime}}</h2>
+          <hr>
+            <div *ngFor="let item of data">
+              <div  class="column" *ngIf="destinacija.ime==item.baza">
+              <br>
+                <img src="{{item.slika}}" class="img-responsive" alt="">
+            <div class="text-bg col-lg-12 col-xs-12">
+              <span class="col-lg-6 text-center">{{item.proizvodjac_naziv}} {{item.model_naziv}} {{item.id}}</span>
+
+            </div>
+              <button class="btn btn-dark col-lg-4 col-xs-4" (click)="dodajUKorpu(item.brod_id)" >Reserve!</button>
+
+              </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div>
+      <br>
+      <br>
+    <div>
